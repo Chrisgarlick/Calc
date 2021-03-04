@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Hello World</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="number_one" value="Enter a Number">
+        <select name="operator" id="option">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="number_two" value="Enter a number">
+        <input type="submit" value="Submit">
+    </form>
+    <h1>{{ result }}</h1>
+{% endblock %}
