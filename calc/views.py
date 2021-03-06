@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from .forms import CalculatorForm
-
 
 def HomePage(request):
     if request.method == 'POST':
@@ -16,6 +14,6 @@ def HomePage(request):
             result = int(num1) * int(num2)
         elif operator == '/':
             result = int(num1) / int(num2)
-        
+
         return render(request, 'calc/home.html', {'result': result})
     return render(request, 'calc/home.html')
